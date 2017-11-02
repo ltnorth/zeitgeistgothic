@@ -1,5 +1,5 @@
 class Pages::ZeitgeistLostPasswordPage < SitePrism::Page
-  
+  include NavigationComponent
   set_url "https://www.zeitgeistgothic.co.uk/my-account/lost-password/"
   set_url_matcher /zeitgeistgothic.co.uk\/my-account\/lost-password/
 
