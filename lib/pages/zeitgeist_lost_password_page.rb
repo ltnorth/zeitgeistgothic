@@ -1,5 +1,7 @@
 class Pages::ZeitgeistLostPasswordPage < SitePrism::Page
   
+  set_url "https://www.zeitgeistgothic.co.uk/my-account/lost-password/"
+  set_url_matcher /zeitgeistgothic.co.uk\/my-account\/lost-password/
 
   element :username_field, "input[id= 'user_login']"
   element :reset_password_button, :xpath, '//*[@id="post-8"]/div/div/form/p[3]/input[2]'
