@@ -12,19 +12,19 @@ As a group, we discussed how our Kanban board should be set out. The board consi
 
 We then derived user stories which would assist us in creating our test cases/conditions, which were priortised from 1-3; 1 being the test which tests the most functional aspect of the website. Each member of the group took responsibilty on which user story they wanted to complete.
 
-##Tasks undertaken by each member
+## Tasks undertaken by each member
 
-####Chris
+#### Chris
 
-####Martha
+#### Martha
 
-####Abass
+#### Abass
 * Started ReadMe basic structure
 * Assisted Liam in finding the xpaths and id's for the home_page.rb
 * Did the elements and methods in the cart_page.rb
 
-####Luke
+#### Luke
 
-####Liam
+#### Liam
 
-####James
+#### James
