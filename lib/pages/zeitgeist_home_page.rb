@@ -79,10 +79,55 @@ class Pages::ZeitgeistHomePage < SitePrism::Page
     shop_by_sweaters.click
   end
 
-  def click_shop_by_tees
-    shop_by_tees.click
+  def click_new_in_phone_case
+    new_in_phone_case.click
+  end
+  def click_add_to_basket_phone_case
+    add_to_basket_phone_case.click
+  end
+  def click_new_in_grey_tee
+    new_in_grey_tee.click
+  end
+  def click_select_options_grey_tee
+    select_options_grey_tee.click
+  end
+  def click_new_in_icon_sweater
+    new_in_icon_sweater.click
+  end
+  def click_select_options_icon_sweater
+    select_options_icon_sweater.click
+  end
+  def click_new_in_skully_sweater
+    new_in_skully_sweater.click
+  end
+  def click_select_options_skully_sweater
+    select_options_skully_sweater.click
   end
 
+  def best_sellers_cross_section
+    best_sellers_cross_section.click
+  end
+  def select_options_cross_section
+    select_options_cross_section.click
+  end
+  def best_sellers_rest_in_pieces
+    best_sellers_rest_in_pieces.click
+  end
+  def select_options_rest_in_pieces
+    select_options_rest_in_pieces.click
+  end
+  def best_sellers_word_up
+    best_sellers_word_up.click
+  end
+  def select_options_word_up
+    select_options_word_up.click
+  end
+  def best_sellers_icon_case
+    best_sellers_icon_case.click
+  end
+  def add_to_basket_icon_case
+    add_to_basket_icon_case.click
+  end
 end
 
 
