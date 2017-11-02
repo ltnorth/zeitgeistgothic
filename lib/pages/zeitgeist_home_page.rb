@@ -33,9 +33,11 @@ class Pages::ZeitgeistHomePage < SitePrism::Page
   def click_shop_by_accessories
     shop_by_accessories.click
   end
-
   def click_shop_by_sweaters
     shop_by_sweaters.click
+  end
+  def click_shop_by_tees
+    shop_by_tees.click
   end
 
   def click_new_in_phone_case
