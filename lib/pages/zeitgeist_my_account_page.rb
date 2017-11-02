@@ -30,3 +30,4 @@ class Pages::ZeitgeistMyAccountPage < SitePrism::Page
     login_button.click
   end
 end
+
