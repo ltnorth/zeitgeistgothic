@@ -1,5 +1,5 @@
 class Pages::ZeitgeistCheckoutPage < SitePrism::Page
-  include NavigationComponent
+  #include NavigationComponent
 
   
 	set_url "https://www.zeitgeistgothic.co.uk/checkout"
@@ -20,8 +20,10 @@ class Pages::ZeitgeistCheckoutPage < SitePrism::Page
   element :create_account, '#createaccount'
   element :password, '#account_password'
   element :delivery_address_checkbox, '#ship-to-different-address-checkbox'
+  element :delivery_name, '#shipping_first_name'
   element :order_notes, '#order_comments'
   element :successful_coupon, :xpath, '/*[@id="post-7"]/div/div/div[2]'
+
 
   def enter_first_name(name)
   	first_name.set(name)
