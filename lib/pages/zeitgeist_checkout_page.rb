@@ -10,7 +10,8 @@ class Pages::ZeitgeistCheckoutPage < SitePrism::Page
   element :last_name, '#billing_last_name'
   element :company_name, '#billing_company'
   element :country, '#select2-billing_country-container'
-  element :country_field, '#select2-search_field'
+  element :country_field, :xpath, '/html/body/span/span/span[1]/input'
+  element :country_selector, :xpath, '//*[@id="select2-billing_country-result-vp36-AF"]'
   element :street_address, '#billing_address_1'
   element :apartment_number, '#billing_address_2'
   element :city, '#billing_city'
@@ -24,6 +25,7 @@ class Pages::ZeitgeistCheckoutPage < SitePrism::Page
   element :delivery_name, '#shipping_first_name'
   element :order_notes, '#order_comments'
   element :successful_coupon, :xpath, '/*[@id="post-7"]/div/div/div[2]'
+  element :paypal_button, :xpath, '//*[@id="place_order"]'
 
 
   def enter_first_name(name)
@@ -44,6 +46,10 @@ class Pages::ZeitgeistCheckoutPage < SitePrism::Page
 
   def enter_country(country)
   	country_field.set(country)
+  end
+
+  def select_country
+    country_selector.click
   end
 
   def enter_street_address(street_name)
@@ -88,6 +94,10 @@ class Pages::ZeitgeistCheckoutPage < SitePrism::Page
 
   def enter_order_notes(notes)
   	order_notes.set(notes)
+  end
+
+  def paypal_click
+    paypal_button.click
   end
 
 end
