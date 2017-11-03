@@ -21,6 +21,7 @@ class Pages::ZeitgeistCheckoutPage < SitePrism::Page
   element :password, '#account_password'
   element :delivery_address_checkbox, '#ship-to-different-address-checkbox'
   element :order_notes, '#order_comments'
+  element :successful_coupon, :xpath, '/*[@id="post-7"]/div/div/div[2]'
 
   def enter_first_name(name)
   	first_name.set(name)
