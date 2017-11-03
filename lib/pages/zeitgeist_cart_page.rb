@@ -1,12 +1,15 @@
+require_relative '../sections/navigation'
 class Pages::ZeitgeistCartPage < SitePrism::Page
-  include NavigationComponent
+
+  section :nav, NavSection, '#masthead'
 
   set_url "http://zeitgeistgothic.co.uk/cart/"
   set_url_matcher /zeitgeistgothic.co.uk\/cart/
 
 
-  # The small home link which takes back to homepage
+  # The small home link which takes back to homepage and the return to shop button
   element :small_homepage_link, :xpath, '//*[@id="content"]/div/nav/a'
+  element :return_to_homepage_button, :xpath, '//*[@id="post-6"]/div/div/p[2]/a'
 
   # filling in the quantity stuff
   element :quantity_input, "input[id='quantity_59fb803959a69']"
@@ -48,8 +51,12 @@ class Pages::ZeitgeistCartPage < SitePrism::Page
   # clicking on checkout with paypal button
   element :clicking_on_paypal_button, "input[id='woo_pp_ec_button']"
 
-  def return_to_homepage
+  def click_small_homepage_link
   	small_homepage_link.click
+  end
+
+  def get_return_to_homepage
+    return_to_homepage_button
   end
 
   def inputting_quantity_of_product

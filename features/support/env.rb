@@ -2,6 +2,7 @@ require 'capybara/cucumber'
 require 'site_prism'
 require 'active_support'
 
+ActiveSupport::Dependencies.autoload_paths << File.join(Dir.pwd, 'lib/sections')
 ActiveSupport::Dependencies.autoload_paths << File.join(Dir.pwd, 'lib')
 ActiveSupport::Dependencies.autoload_paths << File.join(Dir.pwd, 'lib/pages')
 
