@@ -27,4 +27,8 @@ class ZeitgeistSite
   def zeitgeist_lost_password_page
     Pages::ZeitgeistLostPasswordPage.new
   end
+
+  def zeitgeist_word_up_product_page
+    Pages::ZeitgeistWordUpProductPage.new
+  end
 end
