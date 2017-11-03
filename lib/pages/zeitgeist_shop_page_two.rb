@@ -1,5 +1,5 @@
 class Pages::ZeitgeistShopPageTwo < SitePrism::Page
-  include NavigationComponent
+  # include NavigationComponent
 
   set_url "https://www.zeitgeistgothic.co.uk/shop/page/2/"
   set_url_matcher /zeitgeistgothic.co.uk\/shop\/page\/2/

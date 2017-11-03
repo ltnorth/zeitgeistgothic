@@ -20,6 +20,10 @@ class ZeitgeistSite
     Pages::ZeitgeistShopPage.new
   end
 
+  def zeitgeist_shop_page_two
+    Pages::ZeitgeistShopPageTwo.new
+  end
+
   def zeitgeist_lost_password_page
     Pages::ZeitgeistLostPasswordPage.new
   end
