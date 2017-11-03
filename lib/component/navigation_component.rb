@@ -9,9 +9,37 @@ module NavigationComponent
   element :shop_nav, :xpath, '//*[@id="site-navigation"]/div[1]/ul/li[5]/a'
   element :search_bar, 'input[id="woocommerce-product-search-field-0"]'
   element :cart_overview, :xpath, '//*[@id="site-header-cart"]/li[1]/a'
+  element :mini_cart, "li['class=\"woocommerce-mini-cart-item mini_cart_item\"']"
+  element :remove_item_from_mini_cart, :xpath, '//*[@id="site-header-cart"]/li[2]/div/div/ul/li/a[1]'
+  element :product_link_in_mini_cart, :xpath, '//*[@id="site-header-cart"]/li[2]/div/div/ul/li/a[2]'
+  element :view_basket_in_mini_cart, :xpath, '//*[@id="site-header-cart"]/li[2]/div/div/p[2]/a[1]'
+  element :checkout_basket_in_mini_cart, :xpath, '//*[@id="site-header-cart"]/li[2]/div/div/p[2]/a[2]'
+  element :paypal_checkout_in_mini_cart, :xpath, 'a[@id="woo_pp_ec_button"]'
 
-  
-    
+  def hover_over_mini_cart
+    mini_cart.hover
+  end
+
+  def remove_item_from_mini_cart
+    remove_item_from_mini_cart.click
+  end
+
+  def click_product_link_in_mini_cart
+    product_link_in_mini_cart.click
+  end
+
+  def click_cart_link_in_mini_cart
+    view_basket_in_mini_cart.click
+  end
+
+  def click_checkout_link_in_mini_cart
+    checkout_basket_in_mini_cart.click
+  end
+
+  def click_paypal_link_in_mini_cart
+    paypal_checkout_in_mini_cart.click
+  end
+
   def click_site_logo
     site_logo.click
   end
