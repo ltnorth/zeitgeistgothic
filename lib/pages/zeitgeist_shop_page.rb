@@ -1,5 +1,5 @@
+require_relative '../sections/navigation'
 class Pages::ZeitgeistShopPage < SitePrism::Page
-  include NavigationComponent
 
   set_url "https://www.zeitgeistgothic.co.uk/shop/"
   set_url_matcher /zeitgeistgothic.co.uk\/shop/

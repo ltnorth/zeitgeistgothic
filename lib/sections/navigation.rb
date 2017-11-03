@@ -1,5 +1,4 @@
-module NavigationComponent
-  
+class NavSection < SitePrism::Section
   # 'Nav section'
   element :site_logo, 'div[class="site-branding"]'
   element :home_nav, :xpath, '//*[@id="site-navigation"]/div[1]/ul/li[1]/a'
@@ -72,3 +71,4 @@ module NavigationComponent
     search_bar.enter
   end
 end
+  
