@@ -1,4 +1,6 @@
 class Pages::ZeitgeistCheckoutPage < SitePrism::Page
+  include NavigationComponent
+
   
 	set_url "https://www.zeitgeistgothic.co.uk/checkout"
   set_url_matcher /zeitgeistgothic.co.uk\/checkout/

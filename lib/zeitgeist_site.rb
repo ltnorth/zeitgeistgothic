@@ -19,4 +19,8 @@ class ZeitgeistSite
   def zeitgeist_shop_page
     Pages::ZeitgeistShopPage.new
   end
+
+  def zeitgeist_lost_password_page
+    Pages::ZeitgeistLostPasswordPage.new
+  end
 end
