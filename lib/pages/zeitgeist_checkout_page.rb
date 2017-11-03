@@ -1,6 +1,8 @@
 require_relative '../sections/navigation'
 class Pages::ZeitgeistCheckoutPage < SitePrism::Page
   
+  section :nav, NavSection, '#masthead'
+
 	set_url "https://www.zeitgeistgothic.co.uk/checkout"
   set_url_matcher /zeitgeistgothic.co.uk\/checkout/
 

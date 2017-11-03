@@ -3,6 +3,7 @@ class Pages::ZeitgeistHomePage < SitePrism::Page
   set_url "https://www.zeitgeistgothic.co.uk/"
   set_url_matcher /zeitgeistgothic.co.uk/
 
+  section :nav, NavSection, '#masthead'
 
   # 'Shop by' section
   element :shop_by_accessories, :xpath, '//*[@id="main"]/section[1]/div/ul/li[1]/a'
@@ -28,7 +29,11 @@ class Pages::ZeitgeistHomePage < SitePrism::Page
   element :select_options_word_up, :xpath, '//*[@id="main"]/section[3]/div/ul/li[3]/a[2]'
   element :best_sellers_icon_case, :xpath, '//*[@id="main"]/section[3]/div/ul/li[4]/a[1]'
   element :add_to_basket_icon_case, :xpath, '//*[@id="main"]/section[3]/div/ul/li[4]/a[2]'
-  
+  element :security_error_message , :xpath, '/html/body/div/div/div/h1' 
+
+  def is_security_error?
+    security_error_message
+  end
 
   def click_shop_by_accessories
     shop_by_accessories.click

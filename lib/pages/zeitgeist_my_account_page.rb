@@ -3,6 +3,8 @@ class Pages::ZeitgeistMyAccountPage < SitePrism::Page
   set_url "https://www.zeitgeistgothic.co.uk/my-account/"
   set_url_matcher /zeitgeistgothic.co.uk\/my\-account/
 
+  section :nav, NavSection, '#masthead'
+
   element :username_input, 'input[id="username"]'
   element :password_input, 'input[id="password"]'
   element :login_button, 'input[name = "login"]'
