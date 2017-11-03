@@ -1,3 +1,5 @@
+@item_in_basket
+
 Feature: I am able to checkout successfully
 
 	Scenario: I am able to fill in the checkout page and create and account

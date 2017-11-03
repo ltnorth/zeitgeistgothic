@@ -10,7 +10,7 @@ When(/^I fill in all the required fields$/) do
 	@site.zeitgeist_checkout_page.enter_last_name("O'Neill")
 	@site.zeitgeist_checkout_page.enter_company_name("Zeitgeist Gothic")
 	@site.zeitgeist_checkout_page.click_country
-	@site.zeitgeist_checkout_page.enter_country('United Kingdom')	
+	@site.zeitgeist_checkout_page.enter_country('United Kingdom')
 	@site.zeitgeist_checkout_page.enter_street_address('The New Huddersfield Hotel')
 	@site.zeitgeist_checkout_page.enter_apartment_number("Room 5")
 	@site.zeitgeist_checkout_page.enter_city('Huddersfield')

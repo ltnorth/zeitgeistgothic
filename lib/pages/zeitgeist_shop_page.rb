@@ -1,5 +1,8 @@
+require_relative '../sections/navigation'
 class Pages::ZeitgeistShopPage < SitePrism::Page
-  include NavigationComponent
+
+  section :nav, NavSection, '#masthead'
+
 
   set_url "https://www.zeitgeistgothic.co.uk/shop/"
   set_url_matcher /zeitgeistgothic.co.uk\/shop/
@@ -8,7 +11,7 @@ class Pages::ZeitgeistShopPage < SitePrism::Page
   element :sorting_drop_down, :xpath, '//*[@id="main"]/div[1]/form/select'
   dropdown_num = rand(6)
   element :select_drop_down, :xpath, "//*[@id='main']/div[1]/form/select/option[#{dropdown_num}]"
-  item_num = rand(18)
+  item_num = rand(12)
   element :select_item_via_image, :xpath, "//*[@id='main']/div[2]/ul/li[#{item_num}]/a[1]"
   element :select_item_via_button, :xpath, "//*[@id='main']/div[2]/ul/li[#{item_num}]/a[2]"
   page_num = rand(2..3)
