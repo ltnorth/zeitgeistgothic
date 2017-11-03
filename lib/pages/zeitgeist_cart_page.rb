@@ -14,7 +14,7 @@ class Pages::ZeitgeistCartPage < SitePrism::Page
   # filling in the quantity stuff
   element :quantity_input, "input[id='quantity_59fb803959a69']"
 
-  # clicking the red x to remove the product and confirmation box
+  # the red x to remove the product and confirmation box
   element :removing_product, :xpath, '//*[@id="post-6"]/div/div/form/table/tbody/tr[1]/td[1]/a'
   element :remove_confirmation, :xpath, '//*[@id="post-6"]/div/div[1]'
 
@@ -78,7 +78,7 @@ class Pages::ZeitgeistCartPage < SitePrism::Page
   end
 
   def click_on_product_name_link
-  	click_on_product_name_link.click
+  	clicking_on_product_name_link.click
   end
 
   def applying_coupon_code

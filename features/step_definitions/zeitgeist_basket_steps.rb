@@ -16,14 +16,10 @@ When(/^I click the red cross next to that item$/) do
   @zeitgeist_site.zeitgeist_cart_page.red_cross.click
 end
 
-Then(/^the item is removed from my basket$/) do
-  expect(@zeitgeist_site.zeitgeist_cart_page.red_cross.visible?).to be false
-end
-
-And(/^an alert box appears with the option to undo the change$/) do
+Then(/^an alert box appears with the option to undo the change$/) do
   expect(@zeitgeist_site.zeitgeist_cart_page.get_remove_confirmation.visible?).to be true
 end
 
 And(/^the cart overview is updated$/) do
-  @zeitgeist_site.nav.get_cart_amount < @amount
+  @zeitgeist_site.zeitgeist_cart_page.nav.get_cart_amount < @amount
 end
