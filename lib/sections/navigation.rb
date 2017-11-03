@@ -63,12 +63,16 @@ class NavSection < SitePrism::Section
     shop_nav.click
   end
 
+  def search_bar_displayed?
+    search_bar.visible?
+  end
+
   def type_into_search_bar input
     search_bar.set input
   end
 
   def enter_search
-    search_bar.enter
+    search_bar.send_keys(:enter)
   end
 end
   
