@@ -49,7 +49,10 @@ class Pages::ZeitgeistCartPage < SitePrism::Page
 
   # clicking on proceed to checkout button
   element :clicking_on_proceed_to_checkout_button, :xpath, '//*[@id="post-6"]/div/div/div/div/div/a'
+<<<<<<< HEAD
 
+=======
+>>>>>>> c79a2a223c5961eb81abc04cefe35e0be7d6d0c3
 
   # clicking on checkout with paypal button
   element :clicking_on_paypal_button, "input[id='woo_pp_ec_button']"

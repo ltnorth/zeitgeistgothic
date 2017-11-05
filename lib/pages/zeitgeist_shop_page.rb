@@ -32,7 +32,7 @@ class Pages::ZeitgeistShopPage < SitePrism::Page
   end
 
   def correct_sort_url
-    var = ['popularity', 'rating', 'date', 'price', 'price-desc']
+    var = ['?orderby=popularity', '?orderby=rating', '?orderby=date', '?orderby=price', '?orderby=price-desc']
     index = (@@dropdown_num - 2)
 
     var[index]

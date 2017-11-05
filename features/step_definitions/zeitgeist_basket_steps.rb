@@ -31,15 +31,13 @@ Then(/^I am redirected to that item's product page$/) do
   expect(current_url).to include('/product/')
 end
 
-
+# Remove an item from your basket
 When(/^I click the red cross next to that item$/) do
   @zeitgeist_site.zeitgeist_cart_page.red_cross.click
 end
-
 Then(/^an alert box appears with the option to undo the change$/) do
   expect(@zeitgeist_site.zeitgeist_cart_page.get_remove_confirmation.visible?).to be true
 end
-
 And(/^the cart overview is updated$/) do
   @zeitgeist_site.zeitgeist_cart_page.nav.get_cart_amount < @amount
 end
@@ -67,14 +65,22 @@ Then(/^the item reapears in my basket.$/) do
   expect(@zeitgeist_site.zeitgeist_cart_page.nav.get_cart_amount).to eql(@amount)
 end
 
-
 Given(/^i adjust the quantity of the item in my basket$/) do
   @quantity = @zeitgeist_site.zeitgeist_cart_page.quantity_of_product
   @zeitgeist_site.zeitgeist_cart_page.inputting_quantity_of_product
 end
+
 When(/^I click the update button$/) do
   @zeitgeist_site.zeitgeist_cart_page.click_update_basket
 end
+
 Then(/^My basket is updated succesfully$/) do
   expect(@zeitgeist_site.zeitgeist_cart_page.quantity_of_product).not_to eql(@quantity)
+# Checkout
+When(/^I click checkout$/) do
+  @zeitgeist_site.zeitgeist_cart_page.click_proceed_to_checkout
+end
+
+Then(/^I am redirected to the checkout page$/) do
+  expect(current_path).to eql('/checkout/')
 end

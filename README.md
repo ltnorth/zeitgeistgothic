@@ -19,9 +19,12 @@ We then derived user stories which would assist us in creating our test cases/co
 #### Martha
 
 #### Abass
-* Started ReadMe basic structure
-* Assisted Liam in finding the xpaths and id's for the home_page.rb
-* Did the elements and methods in the cart_page.rb
+* Started ReadMe basic structure.
+* Assisted Liam in doing the home_page.rb.
+* Did the cart_page.rb.
+* Myself and Luke pair programmed to complete the shop page, shop page two POM files as well as writing the 'given when then' for the corresponding features file. Also did the step definitons for thee two files stated.
+* Myself and Luke did the POM for a product page, in this instance it was for the 'word up tee'.
+* Did the before hook where we could call an instance variable which assisted us in implementing DRY when running tests. Achieved by adding a new method called 'added to basket' in the 'word up tee' POM file. Hooks.rb file created in support folder, where the appropriate code written. 
 
 #### Luke
 
