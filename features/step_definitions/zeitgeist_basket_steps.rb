@@ -76,11 +76,20 @@ end
 
 Then(/^My basket is updated succesfully$/) do
   expect(@zeitgeist_site.zeitgeist_cart_page.quantity_of_product).not_to eql(@quantity)
-# Checkout
-When(/^I click checkout$/) do
-  @zeitgeist_site.zeitgeist_cart_page.click_proceed_to_checkout
 end
 
-Then(/^I am redirected to the checkout page$/) do
-  expect(current_path).to eql('/checkout/')
+
+Given(/^i update the quantity of the item in my basket$/) do
+  @amount = @zeitgeist_site.zeitgeist_cart_page.get_order_total.text
+  @zeitgeist_site.zeitgeist_cart_page.inputting_quantity_of_product
+  @zeitgeist_site.zeitgeist_cart_page.click_update_basket
 end
+
+When(/^I click the back button$/) do
+  page.evaluate_script('window.history.back()')
+end
+
+Then(/^update is not overriden$/) do
+  expect(@zeitgeist_site.zeitgeist_cart_page.nav.get_cart_amount).to eql(@amount.slice!(1..@amount.length))
+end
+

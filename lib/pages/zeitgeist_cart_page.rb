@@ -14,6 +14,8 @@ class Pages::ZeitgeistCartPage < SitePrism::Page
   # filling in the quantity stuff
   element :quantity_input, 'input[inputmode="numeric"]'
 
+  # Total of the 
+  element :total_of_order, :xpath, '//*[@id="post-6"]/div/div/form/table/tbody/tr[1]/td[6]/span'
 
   # the red x to remove the product and confirmation box
   element :removing_product, :xpath, '//*[@id="post-6"]/div/div/form/table/tbody/tr[1]/td[1]/a'
@@ -49,10 +51,6 @@ class Pages::ZeitgeistCartPage < SitePrism::Page
 
   # clicking on proceed to checkout button
   element :clicking_on_proceed_to_checkout_button, :xpath, '//*[@id="post-6"]/div/div/div/div/div/a'
-<<<<<<< HEAD
-
-=======
->>>>>>> c79a2a223c5961eb81abc04cefe35e0be7d6d0c3
 
   # clicking on checkout with paypal button
   element :clicking_on_paypal_button, "input[id='woo_pp_ec_button']"
@@ -122,6 +120,10 @@ class Pages::ZeitgeistCartPage < SitePrism::Page
 
   def click_on_paypal_button
   	clicking_on_paypal_button.click
+  end
+
+  def get_order_total
+    total_of_order
   end
 
 end

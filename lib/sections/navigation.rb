@@ -21,7 +21,7 @@ class NavSection < SitePrism::Section
   end
 
   def get_cart_amount
-    amount = cart_amount.text.slice!(0)
+    amount = cart_amount.text.slice!(1..cart_amount.text.length)
     amount
   end
 

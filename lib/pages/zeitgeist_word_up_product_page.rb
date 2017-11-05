@@ -3,6 +3,7 @@ class Pages::ZeitgeistWordUpProductPage < SitePrism::Page
   
   set_url "https://www.zeitgeistgothic.co.uk/product/word-up-tee-black/"
   set_url_matcher /zeitgeistgothic.co.uk\/product\/word-up-tee-black/
+  section :nav, NavSection, '#masthead'
 
   element :select_size_option, "select[name='attribute_size']"
   element :select_quantity, "input[name='quantity']"
@@ -20,7 +21,7 @@ class Pages::ZeitgeistWordUpProductPage < SitePrism::Page
   end
 
   def choose_quantity 
-    num = rand(0..9)
+    num = rand(1..9)
     select_quantity.set(num)
   end
 
