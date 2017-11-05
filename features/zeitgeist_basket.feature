@@ -19,3 +19,9 @@ Feature: Basket
       When I click the red cross next to that item
       Then an alert box appears with the option to undo the change
       And the cart overview is updated
+
+    @item_in_basket
+    Scenario: I want to checkout
+      Given I have an item in my basket
+      When I click checkout
+      Then I am redirected to the checkout page
