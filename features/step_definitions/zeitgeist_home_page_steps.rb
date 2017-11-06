@@ -46,7 +46,7 @@ end
 When(/^I click on and of the images under the headings$/) do
   @zeitgeist_site.zeitgeist_home_page.click_shop_by_sweaters
 end
-Then(/^I am redirected to the corrisponding page$/) do
+Then(/^I am redirected to the corresponding page$/) do
   expect(current_path).to eql("/product-category/hoodies/")
   @zeitgeist_site.zeitgeist_home_page.load
   @zeitgeist_site.zeitgeist_home_page.click_shop_by_tees

@@ -53,7 +53,6 @@ When adding a product to the cart the ID for the quantity input is generated see
 * I worked on testing the 
 
 #### James
-<<<<<<< HEAD
 worked with martha to fully test the checkout form and payment system. using xpaths, ids and 'names' to find elements in the page. tested all fields and account creation. worked on navigation through the homepage by checking urls after navigating the links on the page.
 
 
