@@ -61,7 +61,6 @@ Lastly I worked on testing whether clicking the best sellers redirects you to th
 #### James
 worked with martha to fully test the checkout form and payment system. using xpaths, ids and 'names' to find elements in the page. tested all fields and account creation. worked on navigation through the homepage by checking urls after navigating the links on the page.
 
-
 ## Recommendations.
 * We would recommend adding id's to the majority of the features that would be tested on a regular basis as this would make it simpler to test those features. Any changes to the codebase of the site would cause the majority of the page object models to be invalid. Adding Id's would mitigate this risk. 
 * Id's that are human readable. 
