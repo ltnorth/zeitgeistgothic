@@ -15,6 +15,16 @@ We then derived user stories which would assist us in creating our test cases/co
 ## Tasks undertaken by each member
 
 #### Chris
+I worked on the navigation page object model. This involved creating a section that siteprism would recognise. 
+
+Search Bar Testing
+On the search bar i tested that it would go to a product page when a user searched for a vaild product, when a generic term was given it would give the user a list of possible results. When given a javascript tag it would give a valid error message. 
+
+Cart testing. 
+I tested the links on the products in the cart. Removing a product from the cart and adjusting the quantity of items in the cart. Making sure changes are not overwritten when the back button is used in the browser. Undoing the removal of an item in the basket. 
+
+My account.
+I tested the links on the my account page to the satisfaction of the product owner as he was less worried about that area of the site. 
 
 #### Martha
 
