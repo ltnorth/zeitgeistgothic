@@ -1,5 +1,4 @@
-module NavigationComponent
-  
+class NavSection < SitePrism::Section
   # 'Nav section'
   element :site_logo, 'div[class="site-branding"]'
   element :home_nav, :xpath, '//*[@id="site-navigation"]/div[1]/ul/li[1]/a'
@@ -15,9 +14,14 @@ module NavigationComponent
   element :view_basket_in_mini_cart, :xpath, '//*[@id="site-header-cart"]/li[2]/div/div/p[2]/a[1]'
   element :checkout_basket_in_mini_cart, :xpath, '//*[@id="site-header-cart"]/li[2]/div/div/p[2]/a[2]'
   element :paypal_checkout_in_mini_cart, :xpath, 'a[@id="woo_pp_ec_button"]'
+  element :cart_amount, :xpath, '//*[@id="site-header-cart"]/li[1]/a/span[1]'
 
   def hover_over_mini_cart
     mini_cart.hover
+  end
+
+  def get_cart_amount
+    amount = cart_amount.text.slice!(1..cart_amount.text.length)
   end
 
   def remove_item_from_mini_cart
@@ -64,11 +68,16 @@ module NavigationComponent
     shop_nav.click
   end
 
+  def search_bar_displayed?
+    search_bar.visible?
+  end
+
   def type_into_search_bar input
     search_bar.set input
   end
 
   def enter_search
-    search_bar.enter
+    search_bar.send_keys(:enter)
   end
 end
+  

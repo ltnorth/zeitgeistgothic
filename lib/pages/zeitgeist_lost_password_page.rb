@@ -1,7 +1,9 @@
+require_relative '../sections/navigation'
 class Pages::ZeitgeistLostPasswordPage < SitePrism::Page
-  include NavigationComponent
   set_url "https://www.zeitgeistgothic.co.uk/my-account/lost-password/"
   set_url_matcher /zeitgeistgothic.co.uk\/my-account\/lost-password/
+
+  section :nav, NavSection, '#masthead'
 
   element :home_nav_lost_password, :xpath, '//*[@id="content"]/div/nav/a[1]'
   element :my_account_nav, :xath, '//*[@id="content"]/div/nav/a[2]'
