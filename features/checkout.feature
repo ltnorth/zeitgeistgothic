@@ -10,4 +10,4 @@ Feature: I am able to checkout successfully
 
 		Given I am on the checkout page
 		When I click the create account checkbox
-		Then I can enter a password and create an account 
+		Then I can enter a password to create an account 
