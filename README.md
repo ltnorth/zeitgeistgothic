@@ -28,6 +28,8 @@ I tested the links on the my account page to the satisfaction of the product own
 
 #### Martha
 * Worked with James on the checkout form, filling in the form with enough information to continue to paypal, and testing that you are able to select 'create an account' and fill in a password, although based on information from the product owner we decided not to test actually creating an account.
+* Separated out the checkout tests to be more precise 
+* Added a test for adding a coupon to the cart
 * Altered the before hook to allow it to be used in the checkout tests.
 
 #### Abass
