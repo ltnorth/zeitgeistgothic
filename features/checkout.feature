@@ -11,3 +11,7 @@ Feature: I am able to checkout successfully
 		Given I am also on the checkout page
 		When I click the create account checkbox
 		Then I can enter a password to create an account 
+
+		Given I am checking out
+		When I click on the delivery address checkbox
+		Then I can enter a delivery name
