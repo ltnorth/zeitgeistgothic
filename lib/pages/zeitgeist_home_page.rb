@@ -111,6 +111,8 @@ class Pages::ZeitgeistHomePage < SitePrism::Page
   end
   def click_random_best_seller_button
     random_best_seller_button.click
+  end
+  def random_best_seller_button_text
     if random_best_seller_button.text == 'Add to basket'
       return 1
     else
