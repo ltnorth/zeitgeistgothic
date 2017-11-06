@@ -29,11 +29,18 @@ class Pages::ZeitgeistHomePage < SitePrism::Page
   element :select_options_word_up, :xpath, '//*[@id="main"]/section[3]/div/ul/li[3]/a[2]'
   element :best_sellers_icon_case, :xpath, '//*[@id="main"]/section[3]/div/ul/li[4]/a[1]'
   element :add_to_basket_icon_case, :xpath, '//*[@id="main"]/section[3]/div/ul/li[4]/a[2]'
+
+  rand_num = rand(1..4)
+  element :random_best_seller_image, :xpath, "//*[@id='main']/section[3]/div/ul/li[#{rand_num}]/a[1]"
+  element :random_best_seller_button, :xpath, "//*[@id='main']/section[3]/div/ul/li[#{rand_num}]/a[2]"
+  
   element :security_error_message , :xpath, '/html/body/div/div/div/h1' 
 
   def is_security_error?
     security_error_message
   end
+
+  # Shop by category
 
   def click_shop_by_accessories
     shop_by_accessories.click
@@ -44,6 +51,8 @@ class Pages::ZeitgeistHomePage < SitePrism::Page
   def click_shop_by_tees
     shop_by_tees.click
   end
+
+  # 'New in' section
 
   def click_new_in_phone_case
     new_in_phone_case.click
@@ -70,6 +79,8 @@ class Pages::ZeitgeistHomePage < SitePrism::Page
     select_options_skully_sweater.click
   end
 
+  # Best sellers methods
+
   def best_sellers_cross_section
     best_sellers_cross_section.click
   end
@@ -93,6 +104,18 @@ class Pages::ZeitgeistHomePage < SitePrism::Page
   end
   def add_to_basket_icon_case
     add_to_basket_icon_case.click
+  end
+
+  def click_random_best_seller_image
+    random_best_seller_image.click
+  end
+  def click_random_best_seller_button
+    random_best_seller_button.click
+    if random_best_seller_button.text == 'Add to basket'
+      return 1
+    else
+      return 0
+    end
   end
 end
 
