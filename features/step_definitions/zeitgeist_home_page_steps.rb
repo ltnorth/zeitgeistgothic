@@ -21,7 +21,6 @@ Then(/^I am either redirected to the item's product page or it is added straight
   if @option == 0
     expect(current_url).to include('/product/')
   else
-    # expect(@zeitgeist_site.zeitgeist_home_page.nav.sidebar_visible?).to be true
     expect(@zeitgeist_site.zeitgeist_home_page.nav.get_sidebar_subtotal).to be > @basket_amount
   end
 end
