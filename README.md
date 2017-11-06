@@ -56,6 +56,7 @@ I also worked on testing the cart page:
 * Removing items from the basket
 * Going to the product page of an item in the basket
 * Clicking checkout
+
 Lastly I worked on testing whether clicking the best sellers redirects you to the proper screen
 
 #### James
