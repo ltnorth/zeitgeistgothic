@@ -42,7 +42,7 @@ Feature: Basket
 
   @specific_item_in_basket
   Scenario: updates to your basket do not get removed by the back button being clicked.
-    Given i update the quantity of the item in my basket
+    Given I update the quantity of the item in my basket
     When I click the back button
     Then update is not overriden
     

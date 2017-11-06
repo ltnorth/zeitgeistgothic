@@ -52,8 +52,8 @@ end
 
 
 Given(/^I have removed an item from my basket$/) do
-    @amount = @zeitgeist_site.zeitgeist_cart_page.nav.get_cart_amount
-    @zeitgeist_site.zeitgeist_cart_page.red_cross.click
+  @amount = @zeitgeist_site.zeitgeist_cart_page.nav.get_cart_amount
+  @zeitgeist_site.zeitgeist_cart_page.red_cross.click
 end
 
 When(/^I click on the undo link$/) do
@@ -79,7 +79,7 @@ Then(/^My basket is updated succesfully$/) do
 end
 
 
-Given(/^i update the quantity of the item in my basket$/) do
+Given(/^I update the quantity of the item in my basket$/) do
   @amount = @zeitgeist_site.zeitgeist_cart_page.get_order_total.text
   @zeitgeist_site.zeitgeist_cart_page.inputting_quantity_of_product
   @zeitgeist_site.zeitgeist_cart_page.click_update_basket
@@ -87,6 +87,8 @@ end
 
 When(/^I click the back button$/) do
   page.evaluate_script('window.history.back()')
+  # Think there is a neater way to do this using the Selenium back() method but not sure exactly how it works
+  # driver.navigate.back
 end
 
 Then(/^update is not overriden$/) do

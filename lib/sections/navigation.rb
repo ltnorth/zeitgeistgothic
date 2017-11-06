@@ -22,7 +22,6 @@ class NavSection < SitePrism::Section
 
   def get_cart_amount
     amount = cart_amount.text.slice!(1..cart_amount.text.length)
-    amount
   end
 
   def remove_item_from_mini_cart
