@@ -19,7 +19,8 @@ class Pages::ZeitgeistMyAccountPage < SitePrism::Page
   element :address_link, :xpath, '//*[@id="post-8"]/div/div/nav/ul/li[4]/a'
   element :account_link, :xpath, '//*[@id="post-8"]/div/div/nav/ul/li[5]/a'
   element :logout_link, :xpath, '//*[@id="post-8"]/div/div/nav/ul/li[6]/a'
->>>>>>> 80cf72c146f28d2561e6761ae0ad3baa27d15f8f
+
+
   def fill_in_username(username)
     username_input.set(username)
   end
