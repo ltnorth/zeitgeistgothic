@@ -40,5 +40,18 @@ When(/^I click on the select options button under the new in heading$/) do
 end
 
 Then(/^I am redirected to the correct page for the skully tee grey via the options I have clicked on$/)do
-  expect(current_url).to eql 'https://www.zeitgeistgothic.co.uk/product/skully-tee-grey/'
+
+end
+
+When(/^I click on and of the images under the headings$/) do
+  @zeitgeist_site.zeitgeist_home_page.click_shop_by_sweaters
+end
+Then(/^I am redirected to the corrisponding page$/) do
+  expect(current_path).to eql("/product-category/hoodies/")
+  @zeitgeist_site.zeitgeist_home_page.load
+  @zeitgeist_site.zeitgeist_home_page.click_shop_by_tees
+  expect(current_path).to eql("/product-category/tshirts/")
+  @zeitgeist_site.zeitgeist_home_page.load
+  @zeitgeist_site.zeitgeist_home_page.click_shop_by_accessories
+  expect(current_path).to eql("/product-category/accessories/")
 end

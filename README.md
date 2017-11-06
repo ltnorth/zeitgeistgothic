@@ -53,7 +53,9 @@ When adding a product to the cart the ID for the quantity input is generated see
 #### Liam
 
 #### James
-worked with martha to fully test the checkout form and payment system. using xpaths, ids and 'names' to find elements in the page. tested all fields and account creation.
+<<<<<<< HEAD
+worked with martha to fully test the checkout form and payment system. using xpaths, ids and 'names' to find elements in the page. tested all fields and account creation. worked on navigation through the homepage by checking urls after navigating the links on the page.
+
 
 ## Recomendations.
 * We would recommend adding id's to the majority of the features that would be tested on a regular basis as this would make it simpler to test those features. Any changes to the codebase of the site would cause the majority of the page object models to be invalid. Adding Id's would mitigate this risk. 
