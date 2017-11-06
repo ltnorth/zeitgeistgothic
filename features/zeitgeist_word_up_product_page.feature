@@ -1,6 +1,6 @@
 Feature: Zeitgeist Word Up Product Page
 
-	Scenario: As a user of the website
+	Scenario: When a user selects size and quantity of the word up tee and adds it to the basket
 		Given I am on the word up product page
 		When I select a size of medium
 		And I select a quantity
