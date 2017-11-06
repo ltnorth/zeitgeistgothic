@@ -1,4 +1,5 @@
 class NavSection < SitePrism::Section
+  
   # 'Nav section'
   element :site_logo, 'div[class="site-branding"]'
   element :home_nav, :xpath, '//*[@id="site-navigation"]/div[1]/ul/li[1]/a'
@@ -15,6 +16,8 @@ class NavSection < SitePrism::Section
   element :checkout_basket_in_mini_cart, :xpath, '//*[@id="site-header-cart"]/li[2]/div/div/p[2]/a[2]'
   element :paypal_checkout_in_mini_cart, :xpath, 'a[@id="woo_pp_ec_button"]'
   element :cart_amount, :xpath, '//*[@id="site-header-cart"]/li[1]/a/span[1]'
+  element :sidebar_subtotal, :xpath, '/html/body/div[3]/div[2]/div/p[1]/span'
+  element :sidebar_title, :xpath, '/html/body/div[3]/div[2]/h2'
 
   def hover_over_mini_cart
     mini_cart.hover
@@ -22,6 +25,14 @@ class NavSection < SitePrism::Section
 
   def get_cart_amount
     amount = cart_amount.text.slice!(1..cart_amount.text.length)
+  end
+
+  def get_sidebar_subtotal
+    amount = sidebar_subtotal.text.slice!(1..sidebar_subtotal.text.length)
+  end
+
+  def sidebar_visible?
+    sidebar_title.visible?
   end
 
   def remove_item_from_mini_cart
