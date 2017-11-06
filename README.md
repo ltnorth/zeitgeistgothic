@@ -27,7 +27,6 @@ My account.
 I tested the links on the my account page to the satisfaction of the product owner as he was less worried about that area of the site. 
 
 ID Defect
-
 When adding a product to the cart the ID for the quantity input is generated seemingly at random, this was fixed by searching for an input with the input type numeric.  
 
 #### Martha
@@ -51,13 +50,12 @@ When adding a product to the cart the ID for the quantity input is generated see
 * Tested the new in section of the home page.
 
 #### Liam
+* I worked on testing the 
 
 #### James
-<<<<<<< HEAD
 worked with martha to fully test the checkout form and payment system. using xpaths, ids and 'names' to find elements in the page. tested all fields and account creation. worked on navigation through the homepage by checking urls after navigating the links on the page.
 
-
-## Recomendations.
+## Recommendations.
 * We would recommend adding id's to the majority of the features that would be tested on a regular basis as this would make it simpler to test those features. Any changes to the codebase of the site would cause the majority of the page object models to be invalid. Adding Id's would mitigate this risk. 
 * Id's that are human readable. 
 * Deleting an account: Currently the owner must delete customer accounts manually allowing the customer the ability to close their account could be useful to the users. 
