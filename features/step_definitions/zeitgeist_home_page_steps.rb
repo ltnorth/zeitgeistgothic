@@ -1,21 +1,57 @@
-Given(/^I am on the Home Page$/) do
-  @zeitgiest_site.zeitgiest_home_page.load
+Given(/^I am on the homepage$/) do
+  @zeitgeist_site = ZeitgeistSite.new
+  @zeitgeist_site.zeitgeist_home_page.load
+  @basket_amount = @zeitgeist_site.zeitgeist_home_page.nav.get_cart_amount
 end
+
+# Best seller image click
+When(/^I click on the image of a best seller product$/) do
+  @zeitgeist_site.zeitgeist_home_page.click_random_best_seller_image
+end
+Then(/^I am redirected to the product page for that product$/) do
+  expect(current_url).to include('/product/')
+end
+
+# Best seller button click
+When(/^I click the button under the product image$/) do
+  @option = @zeitgeist_site.zeitgeist_home_page.click_random_best_seller_button
+end
+Then(/^I am either redirected to the item's product page or it is added straight to my basket if appropriate$/) do
+  if @option == 0
+    expect(current_url).to include('/product/')
+  else
+    expect(@zeitgeist_site.zeitgeist_home_page.nav.sidebar_visible?).to be true
+    expect(@zeitgeist_site.zeitgeist_home_page.nav.get_sidebar_subtotal).to be > @amount
+  end
+end
+
+# Selecting new in item via image
+When(/^I click on the image under the new in heading$/) do
+  @zeitgeist_site.zeitgeist_home_page.click_new_in_grey_tee
+end
+
+Then(/^I am redirected to the correct page for the skully tee grey image I have clicked on$/) do
+  expect(current_url).to eql 'https://www.zeitgeistgothic.co.uk/product/skully-tee-grey/'
+end
+
+# Selecting new in item via the button
+When(/^I click on the select options button under the new in heading$/) do
+  @zeitgeist_site.zeitgeist_home_page.click_select_options_grey_tee
+end
+
+Then(/^I am redirected to the correct page for the skully tee grey via the options I have clicked on$/)do
+
+end
+
 When(/^I click on and of the images under the headings$/) do
-  @zeitgiest_site.zeitgiest_home_page.click_shop_by_sweaters
+  @zeitgeist_site.zeitgeist_home_page.click_shop_by_sweaters
 end
 Then(/^I am redirected to the corrisponding page$/) do
- expect(current_path).to eql("product-category/hoodies/")
-end
-When(/^I click on and of the images under the headings$/) do
-  @zeitgiest_site.zeitgiest_home_page.click_shop_by_tees
-end
-Then(/^I am redirected to the corrisponding page$/) do
- expect(current_path).to eql("product-category/tshirts/")
-end
-When(/^I click on and of the images under the headings$/) do
-  @zeitgiest_site.zeitgiest_home_page.click_shop_by_accessories
-end
-Then(/^I am redirected to the corrisponding page$/) do
- expect(current_path).to eql("product-category/accessories/")
+  expect(current_path).to eql("/product-category/hoodies/")
+  @zeitgeist_site.zeitgeist_home_page.load
+  @zeitgeist_site.zeitgeist_home_page.click_shop_by_tees
+  expect(current_path).to eql("/product-category/tshirts/")
+  @zeitgeist_site.zeitgeist_home_page.load
+  @zeitgeist_site.zeitgeist_home_page.click_shop_by_accessories
+  expect(current_path).to eql("/product-category/accessories/")
 end

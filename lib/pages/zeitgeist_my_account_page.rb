@@ -10,7 +10,15 @@ class Pages::ZeitgeistMyAccountPage < SitePrism::Page
   element :login_button, 'input[name = "login"]'
   element :lost_password_link, :xpath, '//*[@id="post-8"]/div/div/form/p[4]/a'
   element :remember_me_checkbox, "input[id= 'rememberme']"
-  element :error_message_box '//*[@id="content"]/div/div[1]/ul/li'
+  element :error_message_box, :xpath, '//*[@id="content"]/div/div[1]/ul/li'
+
+  # Once Logged In.
+  element :dashboard_link, :xpath, '//*[@id="post-8"]/div/div/nav/ul/li[1]/a'
+  element :orders_link, :xpath, '//*[@id="post-8"]/div/div/nav/ul/li[2]'
+  element :downloads_link, :xpath, '//*[@id="post-8"]/div/div/nav/ul/li[3]/a'
+  element :address_link, :xpath, '//*[@id="post-8"]/div/div/nav/ul/li[4]/a'
+  element :account_link, :xpath, '//*[@id="post-8"]/div/div/nav/ul/li[5]/a'
+  element :logout_link, :xpath, '//*[@id="post-8"]/div/div/nav/ul/li[6]/a'
 
   def fill_in_username(username)
     username_input.set(username)
@@ -30,6 +38,34 @@ class Pages::ZeitgeistMyAccountPage < SitePrism::Page
 
   def click_login_button
     login_button.click
+  end
+
+  def signed_in?
+    dashboard_link.visible?
+  end
+
+  def get_dashboard_link
+    dashboard_link
+  end
+
+  def get_orders_link
+    orders_link
+  end
+
+  def get_downloads_link
+    downloads_link
+  end
+
+  def get_address_link
+    address_link
+  end
+
+  def get_account_link
+    account_link
+  end
+
+  def get_logout_link
+    logout_link
   end
 end
 
