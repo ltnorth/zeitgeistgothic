@@ -92,6 +92,10 @@ class Pages::ZeitgeistCheckoutPage < SitePrism::Page
   	delivery_address_checkbox.click
   end
 
+  def enter_delivery_name(name)
+  	delivery_name.set(name)
+  end
+
   def enter_order_notes(notes)
   	order_notes.set(notes)
   end

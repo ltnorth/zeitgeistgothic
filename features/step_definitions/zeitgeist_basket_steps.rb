@@ -95,3 +95,15 @@ Then(/^update is not overriden$/) do
   expect(@zeitgeist_site.zeitgeist_cart_page.nav.get_cart_amount).to eql(@amount.slice!(1..@amount.length))
 end
 
+Given(/^I have an item in the basket$/) do
+  @zeitgeist_site.zeitgeist_cart_page.red_cross.visible?
+end
+
+When(/^I add a valid coupon code to the coupon code field$/) do
+  @zeitgeist_site.zeitgeist_cart_page.applying_coupon_code
+end
+
+Then(/^A banner tells me the coupon code is applied successfully$/) do
+  expect(@zeitgeist_site.zeitgeist_cart_page.successful_coupon.visible?).to be true
+end
+

@@ -45,6 +45,12 @@ Feature: Basket
     Given I update the quantity of the item in my basket
     When I click the back button
     Then update is not overriden
+
+  @item_in_basket
+  Scenario: Adding a coupon
+    Given I have an item in the basket
+    When I add a valid coupon code to the coupon code field
+    Then A banner tells me the coupon code is applied successfully
     
 
 
