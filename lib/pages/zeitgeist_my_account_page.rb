@@ -10,7 +10,7 @@ class Pages::ZeitgeistMyAccountPage < SitePrism::Page
   element :login_button, 'input[name = "login"]'
   element :lost_password_link, :xpath, '//*[@id="post-8"]/div/div/form/p[4]/a'
   element :remember_me_checkbox, "input[id= 'rememberme']"
-  element :error_message_box '//*[@id="content"]/div/div[1]/ul/li'
+  element :error_message_box, '//*[@id="content"]/div/div[1]/ul/li'
 
   def fill_in_username(username)
     username_input.set(username)
