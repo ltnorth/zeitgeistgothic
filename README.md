@@ -47,9 +47,18 @@ When adding a product to the cart the ID for the quantity input is generated see
 
 #### Luke
 * Pair programmed with Abass the shop pages, this includes the page object models of shop page and shop page two, defining and writing tests. As well as the shop page myself and Abass also completed the POM and tests for the product page although this only testing the 'word up tee' due to a lack of time to test more products. 
-* Also wrote the methods which were used in the before hook.   
+* Also wrote the methods which were used in the before hook.
+* Tested the new in section of the home page.
 
 #### Liam
 
 #### James
 worked with martha to fully test the checkout form and payment system. using xpaths, ids and 'names' to find elements in the page. tested all fields and account creation.
+
+## Recomendations.
+* We would recmmend adding id's to the majority of the features that would be tested on a regular basis as this would make it simpler to test those features. Any changes to the codebase of the site would cause the majority of the page object models to be invalid. Adding Id's would mitigate this risk. 
+* Id's that are human readable. 
+* Deleting an account: Currently the owner must delete customer accounts manually allowing the customer the ability to close their account could be useful to the users. 
+* Removal of the basket sidebar: It is felt that there are too many ways to get to the basket or view the basket. The dropdown in the navigation menu, a link in the navigation menu, the sidebar. 
+* Auto Complete for the searchbar, currently you must complete the product name for it to go to that product having an autocomplete with the possibility of showing the images and product links in a dropdown would make a big difference in the usability of the site. 
+
