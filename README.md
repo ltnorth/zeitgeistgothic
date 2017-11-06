@@ -41,7 +41,8 @@ I tested the links on the my account page to the satisfaction of the product own
 
 #### Luke
 * Pair programmed with Abass the shop pages, this includes the page object models of shop page and shop page two, defining and writing tests. As well as the shop page myself and Abass also completed the POM and tests for the product page although this only testing the 'word up tee' due to a lack of time to test more products. 
-* Also wrote the methods which were used in the before hook.   
+* Also wrote the methods which were used in the before hook.
+* Tested the new in section of the home page.
 
 #### Liam
 
