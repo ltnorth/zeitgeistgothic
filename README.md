@@ -33,4 +33,4 @@ We then derived user stories which would assist us in creating our test cases/co
 #### Liam
 
 #### James
-worked with martha to fully test the checkout form and payment system. using xpaths, ids and 'names' to find elements in the page. tested all fields and account creation.
+worked with martha to fully test the checkout form and payment system. using xpaths, ids and 'names' to find elements in the page. tested all fields and account creation. worked on navigation through the homepage by checking urls after navigating the links on the page.
