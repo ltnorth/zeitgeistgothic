@@ -57,7 +57,7 @@ I also worked on testing the cart page:
 * Going to the product page of an item in the basket
 * Clicking checkout
 
-Lastly I worked on testing whether clicking the best sellers redirects you to the proper screen
+Lastly I worked on testing whether clicking the best sellers redirects you to the proper screen.
 
 #### James
 worked with martha to fully test the checkout form and payment system. using xpaths, ids and 'names' to find elements in the page. tested all fields and account creation. worked on navigation through the homepage by checking urls after navigating the links on the page.
