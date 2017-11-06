@@ -17,6 +17,8 @@ We then derived user stories which would assist us in creating our test cases/co
 #### Chris
 
 #### Martha
+* Worked with James on the checkout form, filling in the form with enough information to continue to paypal, and testing that you are able to select 'create an account' and fill in a password, although based on information from the product owner we decided not to test actually creating an account.
+* Altered the before hook to allow it to be used in the checkout tests.
 
 #### Abass
 * Started ReadMe basic structure.
