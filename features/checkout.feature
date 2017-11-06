@@ -2,7 +2,7 @@
 
 Feature: I am able to checkout successfully
 
-	Scenario: I am able to fill in the checkout page and create and account
+	Scenario: I am able to fill in the checkout page and create an account
 
 		Given I am on the checkout page
 		When I fill in all the required fields

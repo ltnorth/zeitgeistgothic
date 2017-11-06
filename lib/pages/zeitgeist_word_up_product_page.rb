@@ -3,6 +3,7 @@ class Pages::ZeitgeistWordUpProductPage < SitePrism::Page
   
   set_url "https://www.zeitgeistgothic.co.uk/product/word-up-tee-black/"
   set_url_matcher /zeitgeistgothic.co.uk\/product\/word-up-tee-black/
+  section :nav, NavSection, '#masthead'
 
   element :select_size_option, "select[name='attribute_size']"
   element :select_quantity, "input[name='quantity']"
@@ -15,8 +16,12 @@ class Pages::ZeitgeistWordUpProductPage < SitePrism::Page
     select_size_option.select('M')
   end
 
-  def choose_quantity
-    num = rand(9)
+  def choose_specific_quantity num
+    select_quantity.set(num)
+  end
+
+  def choose_quantity 
+    num = rand(1..9)
     select_quantity.set(num)
   end
 
@@ -39,7 +44,13 @@ class Pages::ZeitgeistWordUpProductPage < SitePrism::Page
 # Required method so it can be used in the before hook
   def added_to_basket
     select_size
-    choose_quantity
+    choose_quantity 
+    click_add_to_basket
+  end
+
+  def specific_added_to_basket
+    select_size
+    choose_specific_quantity 2
     click_add_to_basket
   end
   

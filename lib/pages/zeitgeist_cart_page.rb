@@ -12,10 +12,14 @@ class Pages::ZeitgeistCartPage < SitePrism::Page
   element :return_to_homepage_button, :xpath, '//*[@id="post-6"]/div/div/p[2]/a'
 
   # filling in the quantity stuff
-  element :quantity_input, "input[id='quantity_59fb803959a69']"
+  element :quantity_input, 'input[inputmode="numeric"]'
 
-  # clicking the red x to remove the product
+  # Total of the 
+  element :total_of_order, :xpath, '//*[@id="post-6"]/div/div/form/table/tbody/tr[1]/td[6]/span'
+
+  # the red x to remove the product and confirmation box
   element :removing_product, :xpath, '//*[@id="post-6"]/div/div/form/table/tbody/tr[1]/td[1]/a'
+  element :remove_confirmation, :xpath, '//*[@id="post-6"]/div/div[1]'
 
   # clicking on product image to be taken to the product id page
   element :clicking_on_product_image, :xpath, '//*[@id="post-6"]/div/div/form/table/tbody/tr[1]/td[2]/a'
@@ -29,7 +33,7 @@ class Pages::ZeitgeistCartPage < SitePrism::Page
   element :successful_coupon, :xpath, '//*[@id="post-6"]/div/div/div[1]'
 
   # clicking on the update basket button
-  element :clicking_on_update_basket_button, :xpath, '//*[@id="post-6"]/div/div/form/table/tbody/tr[2]/td/input[1]'
+  element :update_basket_button, :xpath, '//*[@id="post-6"]/div/div/form/table/tbody/tr[2]/td/input[1]'
 
   # choosing the shipping costs; click
   num = rand(3)
@@ -46,7 +50,7 @@ class Pages::ZeitgeistCartPage < SitePrism::Page
   element :clicking_on_update_totals_button, :xpath, '//*[@id="post-6"]/div/div/div/div/table/tbody/tr[2]/td/form/section/p[4]/button'
 
   # clicking on proceed to checkout button
-  element :clicking_on_proceed_to_checkout_button, :xpath, '//*[@id="post-6"]/div/div/div[2]/div/div/a'
+  element :clicking_on_proceed_to_checkout_button, :xpath, '//*[@id="post-6"]/div/div/div/div/div/a'
 
   # clicking on checkout with paypal button
   element :clicking_on_paypal_button, "input[id='woo_pp_ec_button']"
@@ -60,12 +64,20 @@ class Pages::ZeitgeistCartPage < SitePrism::Page
   end
 
   def inputting_quantity_of_product
-  	num = rand(10)
-  	quantity_input.set(num)
+    num = rand(1..10)
+    quantity_input.set(num)
   end
 
-  def removing_product_in_cart
-  	removing_product.click
+  def quantity_of_product
+  	quantity_input
+  end
+
+  def red_cross
+    removing_product
+  end
+
+  def get_remove_confirmation
+    remove_confirmation
   end
 
   def click_product_image
@@ -73,16 +85,16 @@ class Pages::ZeitgeistCartPage < SitePrism::Page
   end
 
   def click_on_product_name_link
-  	click_on_product_name_link.click
+  	clicking_on_product_name_link.click
   end
 
   def applying_coupon_code
-  	input_coupon_code.set('XFJL45')
+  	input_coupon_code.set('SPARTA')
   	clicking_on_apply_coupon_button.click
   end
 
   def click_update_basket
-  	clicking_on_update_basket_button.click
+  	update_basket_button.click
   end
 
   def choose_shipping_type
@@ -108,6 +120,10 @@ class Pages::ZeitgeistCartPage < SitePrism::Page
 
   def click_on_paypal_button
   	clicking_on_paypal_button.click
+  end
+
+  def get_order_total
+    total_of_order
   end
 
 end

@@ -14,9 +14,14 @@ class NavSection < SitePrism::Section
   element :view_basket_in_mini_cart, :xpath, '//*[@id="site-header-cart"]/li[2]/div/div/p[2]/a[1]'
   element :checkout_basket_in_mini_cart, :xpath, '//*[@id="site-header-cart"]/li[2]/div/div/p[2]/a[2]'
   element :paypal_checkout_in_mini_cart, :xpath, 'a[@id="woo_pp_ec_button"]'
+  element :cart_amount, :xpath, '//*[@id="site-header-cart"]/li[1]/a/span[1]'
 
   def hover_over_mini_cart
     mini_cart.hover
+  end
+
+  def get_cart_amount
+    amount = cart_amount.text.slice!(1..cart_amount.text.length)
   end
 
   def remove_item_from_mini_cart
