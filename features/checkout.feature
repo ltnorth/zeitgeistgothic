@@ -8,6 +8,6 @@ Feature: I am able to checkout successfully
 		When I fill in all the required fields
 		Then I can move forward with a purchase
 
-		Given I am on the checkout page
+		Given I am also on the checkout page
 		When I click the create account checkbox
 		Then I can enter a password to create an account 
