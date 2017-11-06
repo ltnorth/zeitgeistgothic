@@ -14,10 +14,6 @@ When(/^I fill in all the required fields$/) do
 	@zeitgeist_site.zeitgeist_checkout_page.enter_postcode('HD1 1QT')
 	@zeitgeist_site.zeitgeist_checkout_page.enter_phone('07578209391')
 	@zeitgeist_site.zeitgeist_checkout_page.enter_email('james.oneill96@gmail.com')
-	@zeitgeist_site.zeitgeist_checkout_page.click_create_account
-	@zeitgeist_site.zeitgeist_checkout_page.click_create_account
-	@zeitgeist_site.zeitgeist_checkout_page.click_delivery_address_checkbox
-	@zeitgeist_site.zeitgeist_checkout_page.click_delivery_address_checkbox
 	@zeitgeist_site.zeitgeist_checkout_page.enter_order_notes("memes = dreams")
 	@zeitgeist_site.zeitgeist_checkout_page.paypal_click
 end
@@ -40,4 +36,19 @@ end
 Then(/^I can enter a password to create an account$/) do
   @zeitgeist_site.zeitgeist_checkout_page.enter_password('password')
   expect(@zeitgeist_site.zeitgeist_checkout_page.password.value).to eql ('password')
+end
+
+Given(/^I am checking out$/)do
+	@zeitgeist_site = ZeitgeistSite.new
+  @zeitgeist_site.zeitgeist_checkout_page.load
+  @zeitgeist_site.zeitgeist_checkout_page.displayed?
+end
+
+When(/^I click on the delivery address checkbox$/)do
+@zeitgeist_site.zeitgeist_checkout_page.click_delivery_address_checkbox
+end
+
+Then(/^I can enter a delivery name$/)do
+	@zeitgeist_site.zeitgeist_checkout_page.enter_delivery_name('James')
+	expect(@zeitgeist_site.zeitgeist_checkout_page.delivery_name.value).to eql ('James')
 end
