@@ -19,3 +19,8 @@ Feature: Zeitgeist Home Page
 		Given I am on the homepage
 		When I click on the select options button under the new in heading
 		Then I am redirected to the correct page for the skully tee grey via the options I have clicked on
+
+  Scenario: Checking Links for "Shop by Catagory"
+    Given I am on the homepage
+    When I click on and of the images under the headings
+    Then I am redirected to the corrisponding page

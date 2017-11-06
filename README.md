@@ -31,6 +31,8 @@ When adding a product to the cart the ID for the quantity input is generated see
 
 #### Martha
 * Worked with James on the checkout form, filling in the form with enough information to continue to paypal, and testing that you are able to select 'create an account' and fill in a password, although based on information from the product owner we decided not to test actually creating an account.
+* Separated out the checkout tests to be more precise 
+* Added a test for adding a coupon to the cart
 * Altered the before hook to allow it to be used in the checkout tests.
 
 #### Abass
@@ -51,7 +53,9 @@ When adding a product to the cart the ID for the quantity input is generated see
 * I worked on testing the 
 
 #### James
-worked with martha to fully test the checkout form and payment system. using xpaths, ids and 'names' to find elements in the page. tested all fields and account creation.
+<<<<<<< HEAD
+worked with martha to fully test the checkout form and payment system. using xpaths, ids and 'names' to find elements in the page. tested all fields and account creation. worked on navigation through the homepage by checking urls after navigating the links on the page.
+
 
 ## Recommendations.
 * We would recommend adding id's to the majority of the features that would be tested on a regular basis as this would make it simpler to test those features. Any changes to the codebase of the site would cause the majority of the page object models to be invalid. Adding Id's would mitigate this risk. 
