@@ -26,6 +26,10 @@ I tested the links on the products in the cart. Removing a product from the cart
 My account.
 I tested the links on the my account page to the satisfaction of the product owner as he was less worried about that area of the site. 
 
+ID Defect
+
+When adding a product to the cart the ID for the quantity input is generated seemingly at random, this was fixed by searching for an input with the input type numeric.  
+
 #### Martha
 * Worked with James on the checkout form, filling in the form with enough information to continue to paypal, and testing that you are able to select 'create an account' and fill in a password, although based on information from the product owner we decided not to test actually creating an account.
 * Altered the before hook to allow it to be used in the checkout tests.
