@@ -50,7 +50,13 @@ When adding a product to the cart the ID for the quantity input is generated see
 * Tested the new in section of the home page.
 
 #### Liam
-* I worked on testing the 
+I created the POM for the homepage with Abass. We retrieved all the elements from the page and created preliminary methods for getting and clicking buttons on the page except for the nav section.  
+I also worked on testing the cart page:
+* Returning to the homepage with nothing in the basket
+* Removing items from the basket
+* Going to the product page of an item in the basket
+* Clicking checkout
+Lastly I worked on testing whether clicking the best sellers redirects you to the proper screen
 
 #### James
 worked with martha to fully test the checkout form and payment system. using xpaths, ids and 'names' to find elements in the page. tested all fields and account creation. worked on navigation through the homepage by checking urls after navigating the links on the page.
